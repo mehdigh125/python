@@ -51,7 +51,7 @@ def read_piece_info(piece_name: str):
     if piece_name=='king' or piece_name=='bishop' or piece_name=='knight' or piece_name=='pawn' or piece_name=='queen' or piece_name=='rook' :
         return pieces[piece_name]
     else:
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="name_piece must king or bishop or knight or pawn or queen or rook")
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="piece name must king or bishop or knight or pawn or queen or rook")
 @app.get("/pieces/image")
 def read_default_image():
      image_path = Path("image/6pieces.jpg")
@@ -64,7 +64,7 @@ def read_piece_image(piece_name: str):
         image_path = images["image"]
         return FileResponse(image_path)
     else:
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="name_piece must  king or bishop or knight or pawn or queen or rook")
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="piece name must  king or bishop or knight or pawn or queen or rook")
 
 
 
