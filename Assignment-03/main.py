@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException, status
 from fastapi.responses import FileResponse
 from pathlib import Path
+import uvicorn
 app = FastAPI()
 
 chess= {
