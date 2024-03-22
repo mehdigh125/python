@@ -21,7 +21,7 @@ def test_1():
 
 @app.get("/salam/{name}")
 def test_2(name:str):
-    return "علیک سلام" + " " + name +" "+" عزیزم"
+    return "علیک سلام" + " " + name +" "+" جونم"
 
 
 @app.get("/items/{item_id}")
