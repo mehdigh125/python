@@ -43,7 +43,7 @@ def read_root():
     return "Hi, welcome to my api In this api there is about chess"
 
 @app.get("/pieces")
-def get_chess():
+def get_pieces():
     return pieces
 
 @app.get("/pieces/{piece_name}/")
