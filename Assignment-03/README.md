@@ -1,42 +1,18 @@
-# Assignment2-API 
+# Assignment3-FastAPI 
 
 
-# Description :
-Here, we're going to create and run some sample APIs:
+# API Chess ♟
+In this api there is about chess
+You can run the  [API Chess](https://python-nfox.onrender.com/docs)
 
-folder 0 : there are some class exercises such as Lord of the Rings, Icon, Video Presentation, etc.
 
-folder 1 : The name of the plant that entered by user with an argument, will be check by another api,and image of plant will be print in output.  
-
-folder 2 : A simple example of creating a api.
-
-folder 3 : A program has been created in Python that provides some specifications of the Requests module.
-
-folder 4 : We use GitHub API to print number of followers and  followings of one github account.
-
-# How to install 
-
-``` 
+# How to Install
+Run this command:
+```
 pip install -r requirements.txt
 ```
-
-# How to run 
-
-python Assignment-02.py
-
-
-# Results 
-
-![1](image/lilium4.png)
-
-![2](image/1.png)
-
-![3](image/60.png)
-
-![4](image/61.png)
-
-
-
-
-
-
+# How to run:
+Run this command:
+```
+uvicorn main:app --reload
+```
