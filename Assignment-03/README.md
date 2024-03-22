@@ -6,7 +6,7 @@ In this api there is about chess
 You can run the  [API Chess](https://python-nfox.onrender.com/docs)
 
 
-# How to Install
+# How to Install:
 Run this command:
 ```
 pip install -r requirements.txt
