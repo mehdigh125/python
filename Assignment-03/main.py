@@ -4,7 +4,7 @@ from pathlib import Path
 import uvicorn
 app = FastAPI()
 
-chess= {
+pieces= {
      "king": {
       
         "image" :'image/king.jpg',
@@ -42,25 +42,25 @@ chess= {
 def read_root():
     return "Hi, welcome to my api In this api there is about chess"
 
-@app.get("/chess")
+@app.get("/pieces")
 def get_chess():
-    return chess
+    return pieces
 
-@app.get("/chess/{name_piece}/")
-def read_piece_info(name_piece: str):
-    if name_piece=='king' or name_piece=='bishop' or name_piece=='knight' or name_piece=='pawn' or name_piece=='queen' or name_piece=='rook' :
-        return chess[name_piece]
+@app.get("/pieces/{piece_name}/")
+def read_piece_info(piece_name: str):
+    if piece_name=='king' or piece_name=='bishop' or piece_name=='knight' or piece_name=='pawn' or piece_name=='queen' or piece_name=='rook' :
+        return pieces[piece_name]
     else:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="name_piece must king or bishop or knight or pawn or queen or rook")
-@app.get("/chess/image")
+@app.get("/pieces/image")
 def read_default_image():
      image_path = Path("image/6pieces.jpg")
      return FileResponse(image_path)
 
-@app.get("/chess/image/{name_piece}")
-def read_piece_image(name_piece: str):
-    if name_piece=='king' or name_piece=='bishop' or name_piece=='knight' or name_piece=='pawn' or name_piece=='queen' or name_piece=='rook' :
-        images= chess[name_piece]
+@app.get("/pieces/image/{piece_name}")
+def read_piece_image(piece_name: str):
+    if piece_name=='king' or piece_name=='bishop' or piece_name=='knight' or piece_name=='pawn' or piece_name=='queen' or piece_name=='rook' :
+        images= pieces[piece_name]
         image_path = images["image"]
         return FileResponse(image_path)
     else:
