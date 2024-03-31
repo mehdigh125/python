@@ -11,16 +11,16 @@ def insertdata():
 insertdata()
 
 def update():
-    sql_command="update  branchs set city=('مشهد75') where id=(101)"
+    sql_command="update  branchs set city=('مشهد75') where id=(102)"
     cursor.execute(sql_command)
     conn.commit()
 update()
 
-def delete():
-    sql_command = "delete from  branchs  where id in (101)"
-    cursor.execute(sql_command)
-    conn.commit()
-delete()
+# def delete():
+#     sql_command = "delete from  branchs  where id in (107)"
+#     cursor.execute(sql_command)
+#     conn.commit()
+# delete()
 
 j=0
 cursor.execute('SELECT * FROM branchs order by id')

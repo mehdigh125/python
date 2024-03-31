@@ -40,7 +40,7 @@ pieces= {
 }
 @app.get("/")
 def read_root():
-    return "Hi, welcome to my api In this api there is about chess"
+    return "Hi, welcome to my api In this api there is about chess--created by mehdi ghaffari moghaddam"
 
 @app.get("/pieces")
 def get_pieces():
