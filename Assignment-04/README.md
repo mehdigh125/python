@@ -14,6 +14,7 @@ pip install -r requirements.txt
 # How to run:
 Run this command:
 ```
+Restore database in microsoft sql server on your system(location:'database/todo.db.bak')
 uvicorn sql:app --reload
 uvicorn image-api:app --reload
 ```
