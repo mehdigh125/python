@@ -1,0 +1,7 @@
+fastapi==0.110.0
+python-multipart==0.0.9
+uvicorn==0.28.0
+deepface==0.0.89
+numpy==1.26.4
+opencv-python==4.9.0.80
+pyodbc==5.1.0
