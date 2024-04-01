@@ -2,8 +2,13 @@ import os,random
 import telebot,array
 import pyqrcode
 from pyqrcode import QRCode
-from jdatetime import date
-bot = telebot.TeleBot("6941726543:AAFX0pFk_nqZnNNwgS583ClBPOynd_wNwOk", parse_mode=None)
+#from jdatetime import date
+import os
+import dotenv
+
+dotenv=dotenv.load_dotenv()
+tel_token=os.getenv("tel_token")
+bot = telebot.TeleBot(tel_token, parse_mode=None)
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     bot.send_message(message.chat.id, "  سلام")
