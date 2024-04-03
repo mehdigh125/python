@@ -1,3 +1,4 @@
+
 import cv2
 from fastapi import FastAPI,File,Form,UploadFile,HTTPException
 from fastapi.responses import StreamingResponse
@@ -20,12 +21,10 @@ async def image_processing(input_file:UploadFile=File(None)):
         image=cv2.imdecode(np_arry,cv2.IMREAD_UNCHANGED)
         cv2.imwrite("test.jpg",image)
         objs = DeepFace.analyze(img_path = "test.jpg",actions = ['age'])
-        data=str(objs)
-        i=data.find('age')
-        j=data.find('region')
-        data=data[i-1:j-3]
-        print(data)
-        return(data)
+        data=objs[0]['age']
+        print(f"age={data}")
+        return(f"age={data}")
+    
 @app.post("/image_processing/gender")
 async def image_processing(input_file:UploadFile=File(None)):
         if not input_file.content_type.startswith("image/"):
@@ -35,12 +34,10 @@ async def image_processing(input_file:UploadFile=File(None)):
         image=cv2.imdecode(np_arry,cv2.IMREAD_UNCHANGED)
         cv2.imwrite("test.jpg",image)
         objs = DeepFace.analyze(img_path = "test.jpg",actions = ['gender'])
-        data=str(objs)
-        i=data.find('dominant_gender')
-        j=data.find('region')
-        data=data[i-1:j-3]
-        print(data)
-        return(data)
+        data=objs[0]['dominant_gender']
+        print(f"gender={data}")
+        return(f"gender={data}")
+
 @app.post("/image_processing/race")
 async def image_processing(input_file:UploadFile=File(None)):
         if not input_file.content_type.startswith("image/"):
@@ -50,13 +47,9 @@ async def image_processing(input_file:UploadFile=File(None)):
         image=cv2.imdecode(np_arry,cv2.IMREAD_UNCHANGED)
         cv2.imwrite("test.jpg",image)
         objs = DeepFace.analyze(img_path = "test.jpg",actions = ['race'])
-        data=str(objs)
-        i=data.find('dominant_race')
-        j=data.find('region')
-        data=data[i-1:j-3]
-        print(data)
-        return(data)
-
+        data=objs[0]['dominant_race']
+        print(f"race={data}")
+        return(f"race={data}")
 
 
 
